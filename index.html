@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Assistant Light Control</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            background-color: lavender; /* Lavender background */
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif; /* Set a default font */
+        }
+
+        #light {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            border-radius: 50%;
+            background-color: transparent;
+            transition: background-color 0.5s, transform 0.5s; /* Smooth transition for color and transform */
+        }
+
+        #light.on {
+            animation: glow 1s infinite alternate; /* Add glow animation when light is on */
+        }
+
+        @keyframes glow {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1); /* Slightly enlarge the light */
+            }
+        }
+
+        #status {
+            margin-top: 20px; /* Space between light and status */
+            font-size: 18px; /* Increase font size */
+        }
+
+        #start-listening {
+            margin-top: 20px; /* Space above the button */
+            padding: 10px 20px; /* Add padding to the button */
+            font-size: 16px; /* Increase font size for button */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+    </style>
+</head>
+<body>
+    <div id="light"></div>
+    <div id="status">Status: Off</div>
+    <!-- Start Listening button is below the status now -->
+    <button id="start-listening">Start Listening</button>
+    <script src="main.js"></script>
+</body>
+</html>
